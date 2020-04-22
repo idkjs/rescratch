@@ -1,7 +1,7 @@
 'use strict';
 
 
-var ReadableStream = /* module */[];
+var $$ReadableStream = { };
 
-exports.ReadableStream = ReadableStream;
+exports.$$ReadableStream = $$ReadableStream;
 /* No side effect */

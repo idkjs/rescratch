@@ -1,7 +1,7 @@
 open Vrroom;
 module Styles = ButtonStyles;
 
-let component = ReasonReact.statelessComponent("Button");
+[@react.component]
 let make = (~label,
             ~icon=nothing,
             ~style=`Normal,
@@ -9,9 +9,7 @@ let make = (~label,
             ~className="",
             ~onClick,
             _:childless) => {
-  ...component,
 
-  render: _self =>
     <button className = ClassName.join(["c-button", className])
             onClick   = (_e => onClick()) >
 

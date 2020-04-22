@@ -1,7 +1,6 @@
 'use strict';
 
 var Electron = require("electron");
-var Js_boolean = require("bs-platform/lib/js/js_boolean.js");
 var Js_null_undefined = require("bs-platform/lib/js/js_null_undefined.js");
 
 function getPath(name) {
@@ -32,7 +31,9 @@ function getPath(name) {
               ));
 }
 
-var App = /* module */[/* getPath */getPath];
+var App = {
+  getPath: getPath
+};
 
 function getPath$1(name) {
   return Electron.remote.app.getPath(name >= 462303765 ? (
@@ -62,24 +63,30 @@ function getPath$1(name) {
               ));
 }
 
-var App$1 = /* module */[/* getPath */getPath$1];
+var App$1 = {
+  getPath: getPath$1
+};
 
-var Remote = /* module */[/* App */App$1];
+var Remote = {
+  App: App$1
+};
 
-function make(width, height, $staropt$star, $staropt$star$1, _) {
-  var pos = $staropt$star ? $staropt$star[0] : /* Default */-384499551;
-  var autoHideMenuBar = $staropt$star$1 ? $staropt$star$1[0] : /* false */0;
+function make(width, height, posOpt, autoHideMenuBarOpt, param) {
+  var pos = posOpt !== undefined ? posOpt : /* Default */-384499551;
+  var autoHideMenuBar = autoHideMenuBarOpt !== undefined ? autoHideMenuBarOpt : false;
   return new Electron.BrowserWindow({
               width: Js_null_undefined.from_opt(width),
               height: Js_null_undefined.from_opt(height),
               x: typeof pos === "number" || pos[0] !== 4003188 ? undefined : pos[1][0],
               y: typeof pos === "number" || pos[0] !== 4003188 ? undefined : pos[1][1],
               center: pos !== 980392437 ? undefined : true,
-              autoHideMenuBar: Js_boolean.to_js_boolean(autoHideMenuBar)
+              autoHideMenuBar: autoHideMenuBar
             });
 }
 
-var BrowserWindow = /* module */[/* make */make];
+var BrowserWindow = {
+  make: make
+};
 
 exports.App = App;
 exports.Remote = Remote;

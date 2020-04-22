@@ -1,23 +1,13 @@
 {
-  "name": "rescratch",
-  "reason": {"react-jsx" : 2},
-  "bsc-flags": ["-bs-no-version-header"],
-  "bs-dependencies": [
-    "reason-react",
-    "@glennsl/rebase",
-    "@glennsl/bs-json",
-    "vrroom",
-    "bs-material-ui-icons"
-  ],
-  "package-specs": {
-    "module": "commonjs",
-    "in-source": true
-  },
-  "suffix": ".bs.js",
-  "sources": [
-    "src",
-    "src/bindings",
-    "src/common"
-  ],
-  "refmt": 3
+	"name": "rescratch",
+	"reason": { "react-jsx": 3 },
+	"bsc-flags": [ "-bs-no-version-header" ],
+	"bs-dependencies": [ "reason-react", "@glennsl/rebase", "@glennsl/bs-json", "vrroom", "bs-material-ui-icons" ],
+	"package-specs": {
+		"module": "commonjs",
+		"in-source": true
+	},
+	"suffix": ".bs.js",
+	"sources": [ "src", "src/bindings", "src/common" ],
+	"refmt": 3
 }

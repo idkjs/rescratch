@@ -6,8 +6,7 @@ var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Js_undefined = require("bs-platform/lib/js/js_undefined.js");
 var ReactCodemirror2 = require("react-codemirror2");
 
-
-  function setMarks(editor, marks) {
+function setMarks(editor, marks) {
     editor.getAllMarks().forEach(function (mark) {
       mark.clear();
     });
@@ -15,12 +14,11 @@ var ReactCodemirror2 = require("react-codemirror2");
       editor.markText(mark.from, mark.to, mark.options);
     });
   }
-
 ;
 
 function setMarks$1(prim, prim$1) {
   setMarks(prim, prim$1);
-  return /* () */0;
+  
 }
 
 function make(style, value, defaultValue, editorDidMount, onChange, options, children) {
@@ -29,10 +27,10 @@ function make(style, value, defaultValue, editorDidMount, onChange, options, chi
               value: Js_undefined.fromOption(value),
               defaultValue: Js_undefined.fromOption(defaultValue),
               editorDidMount: Js_undefined.fromOption(editorDidMount),
-              onBeforeChange: Rebase.Option[/* mapOr */18]((function (f, _, _$1, value) {
+              onBeforeChange: Rebase.$$Option.mapOr((function (f, param, param$1, value) {
                       return Curry._1(f, value);
-                    }), (function (_, _$1, _$2) {
-                      return /* () */0;
+                    }), (function (param, param$1, param$2) {
+                      
                     }), onChange),
               options: Js_undefined.fromOption(options)
             }, children);

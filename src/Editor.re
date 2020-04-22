@@ -6,25 +6,30 @@ open Vrroom;
 [%bs.raw {|require('codemirror/mode/mllike/mllike')|}];
 
 let _langToMode =
-  fun | `ML => "mllike"
-      | `RE => "rust" 
-      | `JS => "javascript";
+  fun
+  | `ML => "mllike"
+  | `RE => "rust"
+  | `JS => "javascript";
 
-let component = ReasonReact.statelessComponent("Editor");
-let make = (~value, ~lang=?, ~defaultValue=?, ~lineNumbers=true, ~readOnly=false, ~onChange=?, _:childless) => {
-  ...component,
-
-  render: (_self) =>
-    <CodeMirror
-      value
-      ?defaultValue
-      ?onChange
-      options={
-        "mode":           lang |> Option.map(_langToMode) |> Js.Undefined.fromOption,
-        "theme":          "material",
-        "lineNumbers":    lineNumbers,
-        "readOnly":       Js.Boolean.to_js_boolean(readOnly)
-      }
-    />
-
+[@react.component]
+let make =
+    (
+      ~value,
+      ~lang=?,
+      ~defaultValue=?,
+      ~lineNumbers=true,
+      ~readOnly=false,
+      ~onChange=?,
+    ) => {
+  <CodeMirror
+    value
+    ?defaultValue
+    ?onChange
+    options={
+      "mode": lang |> Option.map(_langToMode) |> Js.Undefined.fromOption,
+      "theme": "material",
+      "lineNumbers": lineNumbers,
+      "readOnly": bool(readOnly),
+    }
+  />;
 };
